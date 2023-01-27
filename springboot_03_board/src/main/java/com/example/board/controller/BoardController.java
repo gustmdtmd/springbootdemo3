@@ -21,7 +21,7 @@ import com.example.board.dto.BoardDTO;
 import com.example.board.dto.PageDTO;
 import com.example.board.service.BoardService;
 
-// http://localhost:8090/myapp/list.sb
+// http://localhost:8090/list.sb
 // http://localhost:8090/myapp/list.sb?currentPage=1
 
 @Controller
