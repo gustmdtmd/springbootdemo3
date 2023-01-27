@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE tiles-definitions PUBLIC
+"-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN"
+"http://tiles.apache.org/dtds/tiles-config_2_0.dtd">
+<tiles-definitions>
+   <definition name="baseLayout"  template="/WEB-INF/tiles/layout/baseLayout.jsp" >
+      <put-attribute name="title" value="" />
+      <put-attribute name="heading" value="" />
+      <put-attribute name="subheading" value="" />
+      <put-attribute name="header" value="/WEB-INF/tiles/common/header.jsp" />
+      <put-attribute name="content" value="" />
+      <put-attribute name="footer" value="/WEB-INF/tiles/common/footer.jsp" />
+   </definition>
+
+   
+   <definition name="home" extends="baseLayout" >
+      <put-attribute name="title" value="메인페이지" />
+      <put-attribute name="heading" value="마이 쇼핑몰" />
+      <put-attribute name="subheading" value="Welcome to MyMarket" />
+      <put-attribute name="content" value="/WEB-INF/views/home.jsp" />
+   </definition>
+   
+   
+    <definition name="board/list" extends="baseLayout" >
+      <put-attribute name="title" value="게시판" />
+      <put-attribute name="heading" value="마이 게시판" />
+      <put-attribute name="subheading" value="Welcome to MyBoard" />
+      <put-attribute name="content" value="/WEB-INF/views/board/list.jsp" />
+    </definition>
+    
+   <definition name="board/view" extends="baseLayout" >
+      <put-attribute name="title" value="게시판" />
+      <put-attribute name="heading" value="마이 게시판" />
+      <put-attribute name="subheading" value="Welcome to MyBoard" />
+      <put-attribute name="content" value="/WEB-INF/views/board/view.jsp" />
+    </definition>
+    
+    <definition name="board/view2" extends="baseLayout" >
+      <put-attribute name="title" value="게시판" />
+      <put-attribute name="heading" value="마이 게시판" />
+      <put-attribute name="subheading" value="Welcome to MyBoard" />
+      <put-attribute name="content" value="/WEB-INF/views/board/view2.jsp" />
+    </definition>
+    
+    <definition name="board/view3" extends="baseLayout" >
+      <put-attribute name="title" value="게시판" />
+      <put-attribute name="heading" value="마이 게시판" />
+      <put-attribute name="subheading" value="Welcome to MyBoard" />
+      <put-attribute name="content" value="/WEB-INF/views/board/view3.jsp" />
+    </definition>
+    
+   <definition name="board/write" extends="baseLayout" >
+      <put-attribute name="title" value="게시판" />
+      <put-attribute name="heading" value="마이 게시판" />
+      <put-attribute name="subheading" value="Welcome to MyBoard" />
+      <put-attribute name="content" value="/WEB-INF/views/board/write.jsp" />
+    </definition>    
+ 
+    <definition name="board/update" extends="baseLayout" >
+      <put-attribute name="title" value="게시판" />
+      <put-attribute name="heading" value="마이 게시판" />
+      <put-attribute name="subheading" value="Welcome to MyBoard" />
+      <put-attribute name="content" value="/WEB-INF/views/board/update.jsp" />
+    </definition>   
+    
+     <definition name="member/signup" extends="baseLayout">
+      <put-attribute name="title" value="회원" />
+      <put-attribute name="heading" value="마이 회원가입" />
+      <put-attribute name="subheading" value="Welcome to MyMember" />
+      <put-attribute name="content" value="/WEB-INF/views/member/signup.jsp" />
+   </definition>
+   
+    <definition name="member/login" extends="baseLayout">
+      <put-attribute name="title" value="로그인 폼" />
+      <put-attribute name="heading" value="마이 로그인" />
+      <put-attribute name="subheading" value="Welcome to MyMember" />
+      <put-attribute name="content" value="/WEB-INF/views/member/login.jsp" />
+   </definition>
+   
+   <definition name="member/editmember" extends="baseLayout">
+      <put-attribute name="title" value="회원수정 폼" />
+      <put-attribute name="heading" value="마이 회원수정" />
+      <put-attribute name="subheading" value="Welcome to MyMember" />
+      <put-attribute name="content" value="/WEB-INF/views/member/editmember.jsp" />
+   </definition>
+   
+  <definition name="member/changepass" extends="baseLayout">
+      <put-attribute name="title" value="비밀번호 변경 폼" />
+      <put-attribute name="heading" value="마이 비밀번호 변경" />
+      <put-attribute name="subheading" value="Welcome to MyMember" />
+      <put-attribute name="content" value="/WEB-INF/views/member/changepass.jsp" />
+   </definition>
+
+</tiles-definitions>

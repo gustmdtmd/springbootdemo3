@@ -8,8 +8,7 @@
 		SELECT count(*) FROM board
 	</select>
 
-	<select resultType="BoardDTO" id="list"
-		parameterType="PageDTO">
+	<select id="list" resultType="BoardDTO" parameterType="PageDTO">
 		<![CDATA[
 		select b.* from
 		 (select rownum as rm, a.* from(
@@ -23,15 +22,12 @@
 
 	<insert id="save" parameterType="BoardDTO">
 		INSERT INTO board(num, writer, email, subject, reg_date,readcount,
-		ref, re_step, re_level, content, ip,
-		upload)VALUES(board_num_seq.nextval, #{writer, jdbcType=VARCHAR},
+		ref, re_step, re_level, content, ip, upload)
+		VALUES(board_num_seq.nextval, #{writer, jdbcType=VARCHAR},
 		#{email, jdbcType=VARCHAR}, #{subject, jdbcType=VARCHAR}, sysdate, 0,
 		<choose>
-
 			<when test="ref==0">board_num_seq.nextval </when>
-
 			<otherwise>#{ref} </otherwise>
-
 		</choose>
 		, #{re_step}, #{re_level}, #{content, jdbcType=VARCHAR}, #{ip},
 		#{upload, jdbcType=VARCHAR})
@@ -40,8 +36,7 @@
 
 	<update id="readCount" parameterType="int">
 		UPDATE board
-		SET readcount =
-		readcount + 1
+		SET readcount =	readcount + 1
 		WHERE num=#{num}
 	</update>
 
@@ -59,16 +54,18 @@
 
 	<update id="reStepCount" parameterType="BoardDTO">
 		UPDATE board
-		SET re_step=
-		re_step + 1
+		SET re_step=re_step + 1
 		WHERE ref=#{ref} AND re_step>#{re_step}
 	</update>
 
 
 
 	<update id="update" parameterType="BoardDTO">
-		UPDATE boardSET subject=#{subject}, email=#{email}, content=#{content}
-		<if test="upload!=null">,upload=#{upload} </if>
+		UPDATE board
+		SET subject=#{subject}, email=#{email}, content=#{content}
+		<if test="upload!=null">
+		,upload=#{upload} 
+		</if>
 		WHERE num=#{num}
 	</update>
 

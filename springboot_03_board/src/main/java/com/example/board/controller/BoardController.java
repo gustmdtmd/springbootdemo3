@@ -8,10 +8,12 @@ import java.util.UUID;
 
 import javax.servlet.http.HttpServletRequest;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.util.FileCopyUtils;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -25,18 +27,22 @@ import com.example.board.service.BoardService;
 @Controller
 public class BoardController {
 
+	@Autowired
 	private BoardService service;
+	
+	@Autowired
 	private PageDTO pdto;
+	
 	private int currentPage;
 
 	public BoardController() {
-
+	
 	}
 
 	public void setService(BoardService service) {
 		this.service = service;
 	}
-
+	
 	@RequestMapping("/list.sb")
 	public ModelAndView listMethod(PageDTO pv, ModelAndView mav) {
 		int totalRecord = service.countProcess();

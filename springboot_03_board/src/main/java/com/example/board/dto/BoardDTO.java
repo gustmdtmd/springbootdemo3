@@ -2,8 +2,10 @@ package com.example.board.dto;
 
 import java.sql.Date;
 
+import org.springframework.stereotype.Component;
 import org.springframework.web.multipart.MultipartFile;
 
+@Component // 빈으로 생성
 public class BoardDTO {
 	private int num, readcount, ref, re_step, re_level;
 	private String writer, email, subject, content, ip;

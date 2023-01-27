@@ -1,12 +1,16 @@
 plugins {
 	id 'java'
-	id 'org.springframework.boot' version '2.7.8'
-	id 'io.spring.dependency-management' version '1.0.15.RELEASE'
+	id 'org.springframework.boot' version '2.7.3'
+	id 'io.spring.dependency-management' version '1.0.11.RELEASE'
 }
+
 
 group = 'com.example'
 version = '0.0.1-SNAPSHOT'
 sourceCompatibility = '11'
+
+
+
 
 configurations {
 	compileOnly {
@@ -14,47 +18,54 @@ configurations {
 	}
 }
 
+
+
+
 repositories {
+   // 원격 저장소 사용
 	mavenCentral()
+	
+	//로컬 저장소 사용
+	//mavenLocal()
 }
+
 
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-web'
-	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	implementation 'org.springframework.session:spring-session-core'
 	developmentOnly 'org.springframework.boot:spring-boot-devtools'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	
 	//aop
 	implementation 'org.springframework.boot:spring-boot-starter-aop'
 	
-	//jdbc
-	implementation 'org.springframework.boot:spring-boot-starter-jdbc'
-	
-	//commons-io
-	implementation 'commons-io:commons-io:2.11.0'
-	
-	//jackson
-	implementation 'com.fasterxml.jackson.core:jackson-databind:2.12.3'	
-	
-	//lombok
+	//lombok		
 	compileOnly 'org.projectlombok:lombok'
 	annotationProcessor 'org.projectlombok:lombok'
 	
-	//oracle driver
-	runtimeOnly 'com.oracle.database.jdbc:ojdbc6:11.2.0.4'
+	//jsp
+	implementation 'org.apache.tomcat.embed:tomcat-embed-jasper'
+	//jstl
+	implementation 'javax.servlet:jstl:1.2'	
 	
-	//mybatis
-	implementation 'org.mybatis.spring.boot:mybatis-spring-boot-starter:2.1.3'
+	//mysql
+	implementation 'org.mybatis.spring.boot:mybatis-spring-boot-starter:2.2.0'
 	
-	// jsp
-    implementation 'org.apache.tomcat.embed:tomcat-embed-jasper'
-    
-    // jstl
-	implementation 'javax.servlet:jstl:1.2'
+	//oracle : 11 version
+     implementation 'com.oracle.database.jdbc:ojdbc6:11.2.0.4'
+	//implementation 'com.oracle.database.jdbc:ojdbc8'
 	
 	//tiles
 	implementation 'org.apache.tiles:tiles-jsp:3.0.8'
+	implementation 'org.apache.tiles:tiles-servlet:3.0.8'
+	implementation 'org.apache.tiles:tiles-core:3.0.8'
+	implementation 'org.apache.tiles:tiles-api:3.0.8'
+	implementation 'org.apache.tiles:tiles-el:3.0.8'
+	
 }
+
 
 tasks.named('test') {
 	useJUnitPlatform()
 }
+

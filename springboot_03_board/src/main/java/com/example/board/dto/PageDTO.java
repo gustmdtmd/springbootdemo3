@@ -1,5 +1,8 @@
 package com.example.board.dto;
 
+import org.springframework.stereotype.Component;
+
+@Component // 빈으로 생성
 public class PageDTO {
 	private int currentPage; // 현재페이지
 	private int totalCount; // 총 레코드 수
