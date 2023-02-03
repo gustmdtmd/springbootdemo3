@@ -62,9 +62,9 @@
 
 	<update id="update" parameterType="BoardDTO">
 		UPDATE board
-		SET subject=#{subject}, email=#{email}, content=#{content}
+		SET subject=#{subject}, email=#{email, jdbcType=VARCHAR}, content=#{content, jdbcType=VARCHAR}
 		<if test="upload!=null">
-		,upload=#{upload} 
+		,upload=#{upload, jdbcType=VARCHAR} 
 		</if>
 		WHERE num=#{num}
 	</update>
