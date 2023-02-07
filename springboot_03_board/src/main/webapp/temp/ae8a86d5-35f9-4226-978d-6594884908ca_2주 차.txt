@@ -1,0 +1,276 @@
+2주차
+▲▲▲20220913▲▲▲
+
+https://d2.naver.com/helloworld
+https://validator.w3.org/  (http://validator.kldp.org/ = 한국어 버전)=> HTML 파일 오류 검사
+https://jigsaw.w3.org/css-validator/ => CSS 파일 오류 검사
+https://caniuse.com/ => 어떤 브라우저에 지원이 되는지 알 수 있음
+https://www.w3schools.com/ =>프로그래밍 
+https://ofcourse.kr/ & http://www.tcpschool.com/=> 프로그래밍 언어 기초
+
+===========================================================
+
+HTML : 웹 페이지 구성
+CSS : 스타일 적용
+JavaScript : 사용자 반응 처리 등등
+
+스타일 우선순위 : 인라인>내부>외부
+
+★외부스타일시트<head> 사이에 입력 </head>
+<link rel='stylesheet' href='css경로' type='text/css' />
+
+★내부스타일시트<head> 사이에 입력 </head>
+<style type="text/css">
+      .one {
+        background-color: blue;
+      }
+
+★인라인
+<div id="three" 여기에  입력> inline style</div>
+<p 여기에 입력>style test</p>
+style="color: red"
+
+★명령어? = color, background-color, text-decoration, ...
+
+★<p>태그 (paragraph)
+ 1. 텍스트를 단락으로 정의할때 사용된다.
+ 2. 단락 요소에는 a, img등의 인라인요소와 텍스트만을 사용할 수 있다.
+ 3. 단락 요소에는 블록요소를 사용할 수 없다.
+ 4. 단락안에는 강제로 줄바꿈해야 하는 경우 <br />태그를 사용할 수 있지만,
+    시각적인 효과 등을 위해 남용하지 않는다.
+
+★<br/>태그 (Line Break)
+ 1. 줄바꿈을 표시하는 블록 요소이다.
+ 2. 컨텐츠가 없는 요소는 시작요소 뒤에 "/"을 입력한다.
+
+★<hr/>태그 (Horizontal Line)
+ 1. 수평선을 표시하는 블록요소이다.
+
+★인용문
+ 1.blockquote요소 (블록요소):
+   블록요소와 텍스트만 포함할 수 있다.
+   들여쓰기로 표현이 된다.
+ 2. q 요소 (인라인요소):
+    인라인요소와 텍스트를 포함할 수 있다.
+    쌍따옴표로 표시가 된다.
+
+★축약어(abbr)와 두문자어(acronym)
+ 1.abbr요소 (abbreviation) : WWW(World Wid Web)스펠링은
+                                     하나씩 발음하는 경우나 Apartmention을 Apt.라고 줄여서
+                                     단어의 자음이나 모음만 맞추는 등 긴 단어를 줄여 사용하는 것을 말한다.
+ 2.acronym요소 : 축약어인 abbr요소와 비슷하지만 여러 개의
+                       단어들로 이루어진 문장 또는 복합 단어의 앞글자만 따서 줄여
+                       한 단어로 사용하는 것이다.
+       
+Random Acces Memory를 'RAM'이라고 발음하는 경우에  해당한다.
+(html5에서는 acronym요소를 abbr요소로 사용하도록 학고 있다.)
+
+★<pre>태그
+ 1. Pre-Formatted Text약어로 정형화된 텍스트를 나타내는 블록요소이다.
+ 2. 실행을 했을 떄 입력된 모양 그대로 출력이 된다.
+
+★<del>태그
+ 1. 삭제된 텍스트를 의미하는 요소이다.
+        
+<ins>태그
+ 1. 추가된 텍스트를 의미하는 요소이다.
+
+
+★<em>태그
+ 1. 강한 기울기를 의미한다.
+ 2. 기울기를 표현할 때는 'i'태그를 이용해서 표현한다.
+    각종 리더기는 볼룸이나 어조의 변화를 통해 강조의 강약을 표현한다.
+       
+★<strong>태크
+ 1. 강한 강조의 의미를 나타낸다.
+ 2. 'b'태그는 굵게한다 표현을 위한 요소이다.
+
+★첨자
+ 1. sup : SuperScript(위첨자)를 의미하는 요소이다.
+ 2. sup : SupScript(아래첨자)를 의미하는 요소이다.
+
+★address: 웹 사이트가 운영되고 있는 회사 정보를 표현할 때만
+            address요소를 사용한다.
+            단, 일반주소를 표현할 때는 address요소를 사용하지 않는다.
+
+★Character Enitiy
+ 마크업 했을 때 문제를 발생시킬 수 있는 문자들을 표시하기 위한
+ 참조문자를 의미한다.
+ https://developer.mozilla.org/en-US/docs/Glossary/Entity
+ https://www.w3schools.com/html/html_entities.asp
+
+★<a></a> 태그는 하이퍼링크를 걸어주는 태그
+ target속성을 이용해서 문서가 실행되는 위치를 지정할 수 있다.
+            _parent(상위 윈도우)
+            _blank(새문서)
+            _top(상위프레임)
+            _self(현재문서)
+href 클릭시 이동 할 링크
+★<img> 태그의 src 속성은 이미지 소스의 URL을 명시
+
+★<div></div> 태그는 Division의 약자로, 레이아웃을 나누는데 주로 쓰입니다.
+다른 태그와 다르게 특별한 기능을 갖고 있지는 않고, 
+가상의 레이아웃을 설계하는데 쓰이며, 
+주로 CSS와 연동하여 쓰입니다.
+
+★TABLE
+<table>테이블을 만드는 태그
+<th>    테이블의 헤더부분을 만드는 태그
+<tr>     테이블의 행을 만드는 태그
+<td>    테이블의 열을 만드는 태그
+<caption> 제목
+
+★목록 관련 요소(UL, OL, DL)
+<UL>요소
+ 1. 비순서적 목록을 표현할 떄 사용한다.
+ 2.Unordered List
+<OL>요소
+ 1. 순서가 있는 목록을 표현할 때 사용한다.
+ 2. Order list
+<DL>요소
+ 1. 정의형 목록을 표현할 때 사용한다.
+ 2. 주종관계에 있는 내용을 표현할 떄 사용한다.
+
+★<form> : 클라이언로 부터 입력받아 서버로 보내기 위한 요소를 작성한다.
+ action 속성 : 서버로 요청할 URL
+ method 속성 (설정 안하면 기본이 get)
+       1)get : 폼의 데이터를 서버로 전송할 때 256바이트 미만이거나 
+                 보안이 필요하지 않는 데이터를 보낼 때 
+       2)post : 폼의 데이터를 서버로 전송할 때 256바이트를 초과할거나
+                 보안이 필요한 데이터를 보낼 때
+ enctype  속성: 전송할 데이터에 첨부파일이 없을 때는
+                     application/x-www-form-urlencoded 을 지정하고
+                      첨부 파일이 있을 떄는
+                     multipart/form-data 을 지정한다.       
+ fieldset 요소 : 여러개의 폼 요소를 그룹화 할 때 사용한다.
+ legend 요소 : 폼 요소 그룹화 설정된 것에 대한 제목을 지정한다.
+ lable 요소 : 텍스트와 폼 요소의 상관관계를 설정한다.
+ for 속성 : 속성 값을 포커스를 이동하기 위해서 설정한다. 
+
+★<select> 요소 : 셀렉트박스(드롭다운)를 표시한다.
+ <option> 요소 : 셀렉트박스에 포함된 항목들을 정의하기 위해 사용한다.
+  selected 속성 : 여러개의 항목 중에서 선택된 항목을 표시한다.
+  value 속성 : 각 항목의 값을 지정하기 위해 사용한다.
+                   서버로 데이터를 보낼 때 value속성의 값이 넘어간다.
+
+★<input>태그의 type 속성이 checkbox이면 체크박스를,
+              radio이면 라디오 버튼을 표시한다.
+              이름을 바꿀 수 있지만 같아야한다.(ID, name은 바꾸면 안된다.)
+
+★<button>
+
+★레이아웃?
+ 화면을 분할하거나 배열하며 구성하는것
+ HTML5 웹 표준에서는 각 영역을 구분하는 구조적 태그 요소를 정의하여 사용
+ <header> HTML5 문서의 머리말 영역으로 중요한 정보를 표시(예 : 사이트의 제목, 로그 등)
+ <nav> 내비게이션(nevigation)영역으로 웹 사이트 내에 분류된 다른 영역으로 이동할 떄 사용
+ <section> 문서의 영역을 구성할 때 사용. <header>, <article> 태그 등을 포함할 수 있음
+ <article> 독립된 주요 콘텐츠 영역을 정의. 하나의 <section> 태그 내에 여러 개의 <article> 태그를 구성할 수 있음
+ <aside> 주요 콘텐츠 이외에 남은 콘테츠를 표시(예 : 사이드 바(sidebar) 등)
+ <footer> 사이트의 자세한 정보를 표시(예 : 저작권 정보, 관리자 정보, 회사 정보 등)
+
+★datalist 요소
+ 1. datalist 요소는 html5 요소에 새로 추가된 속성으로 form 요소에서 미리 지정된
+    옵션 목록을 제공함
+ 2. 사용자들이 특정 글자를 입력하면 그에 해당하는 미리 지정된 목록을 보여줌.
+ 3. <datalist>요소를 사용할 때 주의할 점은 <input>요소에서 list의 속성값과
+     datalist의 id값이 일치해야한다
+
+★type='date'
+   : 년-월-일 단위로 원하는 날짜 입력할 수 있음
+   
+   type='month'
+   1. month : 년-월 단위로 날짜 입력
+
+    type='week'
+    1. week : 년-주 단위로 날짜 입력
+
+    type='time'
+    1. time : 시간만 입력
+
+    type='datetime' 
+    1. datetime : 년-월-일-시간 단위로 직접 입력,
+
+    type='datetime-local'
+    1. datetime : 년-월-일-시간 단위로 선택 입력,
+      
+    type='color'
+    색상 칩에서 원하는 색상을 선택할 수 있음
+     value 선택을 하지 않으면 기본 black 이 나옴
+
+     type='number'
+     숫자만 입력가능함. 다른것을 입력시 오류
+
+     type='range'
+     특정 범위의 숫자를 선택할 때 사용
+     
+     type='email' (거의 안씀)
+     email형식에 맞춰 입력하지 않으면 전송할 떄 풍선말로 메세지를 띄워줌
+
+★meter
+
+★pesudo class 을 작성할 때
+      :link - :visited - :hover - :active 순으로 작성한다.
+
+★ background-clip (border-box/ padding-box/ content-box)
+     배경 이미지를 잘라낼 위치 결정
+    background-origin(border-box/ padding-box/ content-box)
+      배경위치 시작점 결정
+
+●a:link : 방문하기전의 링크
+● a:visited : 방문한 링크
+● a:hover : 링크에 마우스 포인터를 올려 놓았을 때
+● a:active : 링크를 마우스로 클릭한 순간
+
+
+★background-repeat : 배경이미지 반복
+
+
+★포지션(position)
+        1. 포지션은 박스에 대한 배치를 변경할 때 사용된다.
+        2. 포지션은 값으로 static, absolute, relative, fixed가 있다.
+        3. static : 순서에 의한 기본 위치를 지정한다.
+           absolute : 부모 요소를 기준으로 위치를 지정한다.(원래의 위치값을 잃는다.)
+           relative : 자기 자신을 기준으로 위치를 지정한다.(원래의 위치값을 가지고 있다.)
+           fixed : 스크린을 기준으로 위치를 지정한다.(원래의 위치값을 잃는다.)
+
+★z-index: ;
+-화면상에서 요소들이 겹쳐있을 떄 요소의 위치를 나타내는 속성이다.
+-숫자가 큰 요소가 가장 위에 배치된다.
+
+★display: none; 와 visibility: hidden; 의 차이
+display: none;는 위치값을 잃어버림
+visibility: hidden;는 위치값을 가지고 있음
+ 
+visibility: hidden;
+        width: 0px;    =    display: none;
+        height: 0px;
+
+★overflow
+overflow: visible; 흘러넘치면 그대로 나옴
+overflow: hidden; 흘러넘치는 경우 잘라버림
+overflow: scroll; 흘러넘치는 경우 스크롤이 생김
+overflow: auto; 흘러넘치는 경우 스크롤 생성, 그렇지 않을 경우 그대로
+
+
+::before	요소 내용 앞쪽에 새 컨텐츠를 추가.
+::after	요소 내용 끝에 새 컨텐츠를 추가.
+
+line-height
+ 줄 상자의 높이를 설정
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
