@@ -14,10 +14,11 @@ import org.springframework.security.web.SecurityFilterChain;
 
 import com.example.login.repository.UserRepository;
 import com.example.security.jwt.JwtAuthenticationFilter;
+import com.example.security.jwt.JwtAuthorizationFilter;
 import com.example.security.service.CorsConfig;
 
 //[1] POSTMAN에서 테스트
-//POST http://localhost:8090/login
+//POST http://localhost:8090/join
 //boy, raw , json  => {"username":"min", "password":"1234"}
 //
 
@@ -69,7 +70,7 @@ public class SecurityConfig {
 		public void configure(HttpSecurity http) throws Exception {
 			AuthenticationManager authenticationManager = http.getSharedObject(AuthenticationManager.class);
 			http.addFilter(corsConfig.corsFilter()) // @CrossOrigin(인증 X), Security Filter에 등록 인증(O)
-
+			
 					.addFilter(new JwtAuthenticationFilter(authenticationManager))
 					.addFilter(new JwtAuthorizationFilter(authenticationManager, userReposiroty));
 

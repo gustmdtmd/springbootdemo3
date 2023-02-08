@@ -25,8 +25,9 @@ public class CorsConfig {
 		config.addAllowedHeader("*");
 		// 모든 post, get, put, delete 등 모든 메소드에 응답허용
 		config.addAllowedMethod("*");
-		
+		// 프론트엔드에 노출하도록 허용
 		config.addExposedHeader("Authorization");
+		// config.addExposedHeader("refreshToken");
 		source.registerCorsConfiguration("/**", config);
 		
 		return new CorsFilter(source);
